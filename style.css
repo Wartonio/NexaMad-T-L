@@ -1,0 +1,474 @@
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth; /* Animation douce lors du clic sur le menu */
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    /* Ajustez la hauteur selon vos besoins (40px à 50px est standard) */
+    height: 45px; 
+    width: auto; /* Garde les proportions de l'image */
+    display: block; /* Évite les espaces vides sous l'image */
+}
+
+/* On nettoie un peu la classe .logo pour s'adapter à l'image */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 4px;
+    top: 100%;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8fafc;
+    color: #2563eb;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Section Hero - Thème Transit & Douane */
+.hero {
+    height: 80vh;
+    /* Dégradé ajusté pour une meilleure lisibilité du texte blanc */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    padding: 0 5%; /* Un peu d'espace sur les côtés pour le titre aussi */
+}
+
+.hero-content p {
+    padding-top: 20px;
+    /* Au lieu de 200px fixes, on utilise une largeur maximale */
+    max-width: 800px; 
+    margin: 0 auto; /* Centre le bloc de texte horizontalement */
+    padding-left: 20px; 
+    padding-right: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-header h2 {
+    color: #2563eb;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Grille de présentation */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.about-card {
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 5px solid #2563eb;
+}
+
+.about-card.highlight {
+    background: #2563eb;
+    color: white;
+}
+
+.about-card h3 {
+    margin-bottom: 15px;
+}
+
+.about-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-card li {
+    margin-bottom: 10px;
+}
+
+/* Mission Box */
+.mission-box {
+    text-align: center;
+    background: #eff6ff;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+
+/* Valeurs */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.value-item h4 {
+    color: #1e40af;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.value-item p {
+    font-size: 0.85rem;
+    color: #4b5563;
+}
+
+.btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+/* Sections de contenu */
+.content-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.bg-light {
+    background: #f9fafb;
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* Grille de services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* --- SECTION SERVICES --- */
+.services-section {
+    padding: 80px 0;
+    background-color: #f1f5f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1e293b;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.service-box {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #2563eb;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.target {
+    font-weight: bold;
+    color: #2563eb;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.service-box p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+/* footer {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 20px;
+} */
+
+.contact-footer {
+    background-color: #0f172a; /* Bleu très foncé presque noir */
+    color: #f8fafc;
+    padding: 80px 0 20px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.logo-footer {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.logo-footer span {
+    color: #2563eb;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.footer-grid h4 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.footer-grid h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background: #2563eb;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #2563eb;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.contact-item span {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.contact-item a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* MEDIA QUERIES (Pour le mobile) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* On réduit la taille du texte sur mobile */
+    }
+
+    .hero-content p {
+        padding-left: 15px; /* Padding minimal sur mobile */
+        padding-right: 15px;
+        font-size: 1rem;
+    }
+    
+    .hero {
+        height: auto; /* Permet à la section de s'agrandir si le texte est long */
+        padding: 60px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+    
+    .about-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none; /* Cache par défaut sur mobile, s'affiche au clic/hover */
+        width: 100%;
+        box-shadow: none;
+        background: #f8fafc;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr; /* Tout en une colonne sur mobile */
+        gap: 40px;
+    }
+}
